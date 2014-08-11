@@ -31,7 +31,7 @@
   (%ode:geom-set-body (id geometry) (id body))
   (setf (geometries body) (append (list geometry) (geometries body))))
 
-(defun add-force (body direction)
+(defmethod add-force ((body body) direction)
   (%ode:body-set-linear-vel (id body) (vec-x direction) (vec-y direction) (vec-z direction)))
 
 (defmethod quaternion ((body dynamic-body))
